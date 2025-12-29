@@ -1,0 +1,14 @@
+---
+- name: fetch the file from remote server to controller
+  hosts: db
+  become: true
+
+  tasks:
+    - name: fetch the file from remote server to controller
+      fetch:
+        src: /root/Desktop/hioo.txt
+        dest: /root/fetch-files/{{ inventory_hostname }}-jio.txt
+        owner: yuvik
+        group: root
+        mode: '0644'
+        flat: yes

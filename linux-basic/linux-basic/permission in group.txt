@@ -1,0 +1,153 @@
+[root@localhost /]# mkdir /blood
+[root@localhost /]# ls
+[root@localhost /]# useradd bl1
+[root@localhost /]# useradd bl2
+[root@localhost /]# groupadd donation
+[root@localhost /]# usermod -G donation bl1
+[root@localhost /]# usermod -G donation bl2
+[root@localhost /]#
+[root@localhost /]# id bl1
+uid=1255(bl1) gid=1255(bl1) groups=1255(bl1),1328(donation)
+[root@localhost /]# id bl2
+uid=1256(bl2) gid=1256(bl2) groups=1256(bl2),1328(donation)
+
+
+[root@localhost /]# su - bl1
+[bl1@localhost ~]$ cd /blood/
+[bl1@localhost blood]$ vi bl1.txt
+[bl1@localhost blood]$ ll
+total 4
+-rw-r--r--. 1 bl1 bl1 57 Jun 27 19:45 bl1.txt
+[bl1@localhost blood]$ ls
+bl1.txt
+[bl1@localhost blood]$ exit
+logout
+
+
+[root@localhost /]# useradd bl3
+[root@localhost /]# usermod -aG donation bl3
+[root@localhost /]# su - bl3
+[bl3@localhost ~]$ cd /blood/
+[bl3@localhost blood]$ ls
+bl1.txt  bl1.txt~  bl2.txt
+[bl3@localhost blood]$ rm -rf bl1.txt
+bl1.txt   bl1.txt~
+[bl3@localhost blood]$ rm -rf bl1.txt~
+[bl3@localhost blood]$ ls
+bl1.txt  bl2.txt
+[bl3@localhost blood]$ ll -d
+drwxrwx---. 2 root donation 36 Jun 27 19:55 .
+
+
+
+[root@localhost /]# chmod 1770 /blood
+[root@localhost /]# su - bl1
+[bl1@localhost ~]$ ls
+[bl1@localhost ~]$ cd /blood/
+[bl1@localhost blood]$ ls
+bl1.txt  bl2.txt  bl3.txt
+[bl1@localhost blood]$ rm -rf bl3.txt
+rm: cannot remove 'bl3.txt': Operation not permitted
+[bl1@localhost blood]$ ls
+bl1.txt  bl2.txt  bl3.txt
+[bl1@localhost blood]$ exit
+logout
+
+
+[root@localhost /]# chmod 2770 /blood/
+[root@localhost /]# chmod 4755 /usr/bin/passwd
+
+
+
+
+
+[root@localhost /]# setfacl -m u:bl2:r-x /blood/
+[root@localhost /]# ll /blood/
+total 8
+-rw-r--r--. 1 bl2 bl2  0 Jun 27 19:48 bl1.txt
+-rw-r--r--. 1 bl2 bl2 63 Jun 27 19:46 bl2.txt
+-rw-r--r--. 1 bl3 bl3 58 Jun 27 19:57 bl3.txt
+[root@localhost /]# ll -d /blood/
+drwxrws---+ 2 root donation 51 Jun 27 19:57 /blood/
+[root@localhost /]# su - bl2
+[bl2@localhost ~]$ cd /blood/
+[bl2@localhost blood]$ ls
+bl1.txt  bl2.txt  bl3.txt
+[bl2@localhost blood]$ touch news.txt
+touch: cannot touch 'news.txt': Permission denied
+[bl2@localhost blood]$ cat bl1.txt
+[bl2@localhost blood]$ cat bl2.txt
+blood donation camp
+2nd person given    1k rs rewarded given
+
+[bl2@localhost blood]$ cat bl3.txt
+blood donation camp
+3rd person donated   1k rs rewarded
+
+[bl2@localhost blood]$ exi
+exit   exiv2
+[bl2@localhost blood]$ exit
+logout
+
+
+
+[root@localhost /]# groupadd volunters
+[root@localhost /]# useradd -G volunters vl1
+[root@localhost /]# useradd -G volunters vl2
+[root@localhost /]# setfacl -m g:volunters:rwx /blood/
+[root@localhost /]# su - vl1
+[vl1@localhost ~]$ cd /blood/
+[vl1@localhost blood]$ ll
+total 8
+-rw-r--r--. 1 bl2 bl2       0 Jun 27 19:48 bl1.txt
+-rw-r--r--. 1 bl2 bl2      63 Jun 27 19:46 bl2.txt
+-rw-r--r--. 1 bl3 bl3      58 Jun 27 19:57 bl3.txt
+-rw-r--r--. 1 bl3 donation  0 Jun 27 20:20 camp-location
+[vl1@localhost blood]$ ll -d
+drwxrws---+ 2 root donation 72 Jun 27 20:20 .
+[vl1@localhost blood]$ vi volunters-list
+[vl1@localhost blood]$ cat volunters-list
+vol name       vol age      vol cont     vol orga
+yuvz              20        889099287         muj
+
+[vl1@localhost blood]$ cat bl3.txt
+blood donation camp
+3rd person donated   1k rs rewarded
+
+[vl1@localhost blood]$ cat camp-location
+[vl1@localhost blood]$ vi camp-location
+[vl1@localhost blood]$ ll - d
+ls: cannot access '-': No such file or directory
+ls: cannot access 'd': No such file or directory
+[vl1@localhost blood]$ ll
+total 12
+-rw-r--r--. 1 bl2 bl2        0 Jun 27 19:48 bl1.txt
+-rw-r--r--. 1 bl2 bl2       63 Jun 27 19:46 bl2.txt
+-rw-r--r--. 1 bl3 bl3       58 Jun 27 19:57 bl3.txt
+-rw-r--r--. 1 vl1 donation   0 Jun 27 20:28 camp-location
+-rw-r--r--. 1 vl1 donation   0 Jun 27 20:20 camp-location~
+-rw-r--r--. 1 vl1 donation 101 Jun 27 20:26 volunters-list
+[vl1@localhost blood]$ ls
+bl1.txt  bl2.txt  bl3.txt  camp-location  camp-location~  volunters-list
+[vl1@localhost blood]$ exit
+
+[root@localhost /]# gpasswd donation
+Changing the password for group donation
+New Password:
+Re-enter new password:
+
+[root@localhost /]# su - vl2
+[vl2@localhost ~]$ cd /blood/
+-bash: cd: /blood/: Permission denied
+[vl2@localhost ~]$ newgrp donation
+Password:
+[vl2@localhost ~]$ cd /blood
+[vl2@localhost blood]$ ls
+bl1.txt  bl2.txt  bl3.txt  camp-location  camp-location~  volunters-list
+[vl2@localhost blood]$ vi vl2.txt
+[vl2@localhost blood]$ ll -d
+drwxrws---+ 2 root donation 131 Jun 27 20:37 .
+
+
+
+

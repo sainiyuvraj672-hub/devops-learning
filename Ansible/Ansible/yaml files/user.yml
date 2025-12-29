@@ -1,0 +1,10 @@
+---
+- name: my user playbook
+  hosts: all_servers
+  tasks:
+    - name: create user yuvzz
+      user:
+        name: yuvzz
+        password: "$6$mJpnjo0iwUtYjgZm$87u8jlKs6FAIMYqaNwlLVmg65q3w7XBMhRCbaTRwcHzPxuXfqBrt5FnLUP7yJKhBQtDMu1agJ8wwxkGBU81ru0"
+        state: present
+

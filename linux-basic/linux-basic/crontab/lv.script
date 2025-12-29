@@ -1,0 +1,11 @@
+#!/bin/bash
+
+TARGET="/mnt/first-lv-data"
+LOG="$TARGET/copy.log"
+
+mkdir -p "$TARGET/usr_sample"
+
+rsync -av /usr/share/doc/ "$TARGET/usr_sample/" >> "$LOG" 2>&1
+
+echo "$(date): copy completed" >> "$LOG"
+

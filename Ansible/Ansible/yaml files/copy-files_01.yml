@@ -1,0 +1,13 @@
+---
+- name: copying file to remote
+  hosts: db
+  become: true
+
+  tasks:
+    - name: copy file
+      copy:
+        src: /myfile.txt
+        dest: /tmp/
+        owner: tiluu
+        group: root
+        mode: '0655'

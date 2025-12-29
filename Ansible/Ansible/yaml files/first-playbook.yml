@@ -1,0 +1,22 @@
+---
+- name: My first playbook
+  hosts: all_servers
+  become: true
+
+  tasks:
+    - name: Create a directory for practice
+      file:
+        path: /root/ansible_playbook_practice
+        state: directory
+        mode: '0755'
+
+    - name: Create a file inside the directory
+      file:
+        path: /root/ansible_playbook_practice/hellooo.txt
+        state: touch
+
+    - name: Add content to the file
+      lineinfile:
+        path: /root/ansible_playbook_practice/hellooo.txt
+        line: "hello from ansible playbook"
+

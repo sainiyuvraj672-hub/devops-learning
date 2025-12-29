@@ -1,0 +1,17 @@
+---
+- name: Handle the web server
+  hosts: db
+  become: true
+
+  tasks:
+    - name: Copy website file
+      copy:
+        content: "hello from ansible handler!! 😤🔥"
+        dest: /usr/share/nginx/html/index.html
+      notify: "restart webserver"
+
+  handlers:
+    - name: "restart webserver"
+      service:
+        name: nginx
+        state: restarted

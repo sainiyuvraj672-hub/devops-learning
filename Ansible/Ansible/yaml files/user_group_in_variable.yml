@@ -1,0 +1,25 @@
+---
+- name: variable demo to add the user and groups
+  hosts: all_servers
+  become: true
+
+  vars:
+    my_new_user: yuvija
+    my_group: relation
+    my_u_id: 1014
+    my_g_id: 1018
+
+
+  tasks:
+    - name:  create a new group
+      group:
+        name: "{{ my_group }}"
+        gid: "{{ my_g_id }}"
+        state: present
+
+    - name: create a new user and add him into relation
+      user:
+        name: "{{ my_new_user }}"
+        uid: "{{ my_u_id }}"
+        group: "{{ my_group }}"
+        state: present

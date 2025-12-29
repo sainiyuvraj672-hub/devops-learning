@@ -1,0 +1,13 @@
+---
+- name: download the git, wget
+  hosts: non_root
+  become: true
+
+  tasks:
+    - name:
+      yum:
+        name:
+          - git
+          - wget
+          - nano
+        state: present

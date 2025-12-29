@@ -1,0 +1,17 @@
+---
+- name: install the crontjob package
+  hosts: web
+  become: true
+
+  tasks:
+    - name: crontjob
+      yum:
+        name: cronie
+        state: present
+
+
+    - name: crondjob start
+      service:
+        name: crond
+        state: started
+        enabled: true

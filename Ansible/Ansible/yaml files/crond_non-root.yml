@@ -1,0 +1,20 @@
+---
+- name: cron set non-root
+  hosts: non_root
+  become: true
+
+  tasks:
+    - name: ensure script dir exists
+      file:
+        path: /home/prac_devop/script
+        state: directory
+        owner: prac_devop
+        group: prac_devop
+        mode: '0755'
+
+    - name: add cron job
+      cron:
+        name: hello cron test
+        minute: "*/1"
+        user: prac_devop
+        job: /home/prac_devop/cronie/hello.sh

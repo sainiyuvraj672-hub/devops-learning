@@ -1,0 +1,1026 @@
+Microsoft Windows [Version 10.0.26100.4946]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\user>ssh root@192.168.29.20
+root@192.168.29.20's password:
+Activate the web console with: systemctl enable --now cockpit.socket
+
+Register this system with Red Hat Insights: rhc connect
+
+Example:
+# rhc connect --activation-key <key> --organization <org>
+
+The rhc client and Red Hat Insights will enable analytics and additional
+management capabilities on your system.
+View your connected systems at https://console.redhat.com/insights
+
+You can learn more about how to register your system
+using rhc at https://red.ht/registration
+Last login: Mon Aug 25 08:05:37 2025 from 192.168.29.244
+[root@localhost ~]# cd /etc/yum.repos.d/
+[root@localhost yum.repos.d]# vi list.repo
+[root@localhost yum.repos.d]# subscription-manager register --username yuvraj67 --password tFeV_pdqpX3k63z
+Registering to: subscription.rhsm.redhat.com:443/subscription
+The system has been registered with ID: 6cf40ecb-c94b-4eb4-a6c2-b2d21babd6bb
+The registered system name is: localhost.localdomain
+[root@localhost yum.repos.d]# yum install bind
+Updating Subscription Management repositories.
+Waiting for process with pid 3849 to finish.
+Red Hat Enterprise Linux 9 for x86_64 - BaseOS (RPMs)                                                                       1.6 MB/s |  72 MB     00:46
+Red Hat Enterprise Linux 9 for x86_64 - AppStream (RPMs)                                                                    1.7 MB/s |  66 MB     00:38
+Last metadata expiration check: 0:00:01 ago on Mon 25 Aug 2025 08:16:12 AM IST.
+Dependencies resolved.
+============================================================================================================================================================
+ Package                            Architecture            Version                                 Repository                                         Size
+============================================================================================================================================================
+Installing:
+ bind                               x86_64                  32:9.16.23-31.el9_6                     rhel-9-for-x86_64-appstream-rpms                  502 k
+Upgrading:
+ bind-libs                          x86_64                  32:9.16.23-31.el9_6                     rhel-9-for-x86_64-appstream-rpms                  1.2 M
+ bind-license                       noarch                  32:9.16.23-31.el9_6                     rhel-9-for-x86_64-appstream-rpms                   13 k
+ bind-utils                         x86_64                  32:9.16.23-31.el9_6                     rhel-9-for-x86_64-appstream-rpms                  207 k
+Installing dependencies:
+ bind-dnssec-doc                    noarch                  32:9.16.23-31.el9_6                     rhel-9-for-x86_64-appstream-rpms                   46 k
+ python3-bind                       noarch                  32:9.16.23-31.el9_6                     rhel-9-for-x86_64-appstream-rpms                   67 k
+ python3-ply                        noarch                  3.11-14.el9                             rhel-9-for-x86_64-baseos-rpms                     111 k
+Installing weak dependencies:
+ bind-dnssec-utils                  x86_64                  32:9.16.23-31.el9_6                     rhel-9-for-x86_64-appstream-rpms                  116 k
+
+Transaction Summary
+============================================================================================================================================================
+Install  5 Packages
+Upgrade  3 Packages
+
+Total download size: 2.3 M
+Is this ok [y/N]: y
+Downloading Packages:
+(1/8): python3-ply-3.11-14.el9.noarch.rpm                                                                                   249 kB/s | 111 kB     00:00
+(2/8): bind-dnssec-doc-9.16.23-31.el9_6.noarch.rpm                                                                          102 kB/s |  46 kB     00:00
+(3/8): bind-9.16.23-31.el9_6.x86_64.rpm                                                                                     999 kB/s | 502 kB     00:00
+(4/8): bind-dnssec-utils-9.16.23-31.el9_6.x86_64.rpm                                                                        331 kB/s | 116 kB     00:00
+(5/8): python3-bind-9.16.23-31.el9_6.noarch.rpm                                                                             189 kB/s |  67 kB     00:00
+(6/8): bind-libs-9.16.23-31.el9_6.x86_64.rpm                                                                                2.2 MB/s | 1.2 MB     00:00
+(7/8): bind-license-9.16.23-31.el9_6.noarch.rpm                                                                              39 kB/s |  13 kB     00:00
+(8/8): bind-utils-9.16.23-31.el9_6.x86_64.rpm                                                                               542 kB/s | 207 kB     00:00
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                                       1.9 MB/s | 2.3 MB     00:01
+Red Hat Enterprise Linux 9 for x86_64 - BaseOS (RPMs)                                                                       2.3 MB/s | 3.6 kB     00:00
+Importing GPG key 0xFD431D51:
+ Userid     : "Red Hat, Inc. (release key 2) <security@redhat.com>"
+ Fingerprint: 567E 347A D004 4ADE 55BA 8A5F 199E 2F91 FD43 1D51
+ From       : /etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
+Is this ok [y/N]: y
+Key imported successfully
+Importing GPG key 0x5A6340B3:
+ Userid     : "Red Hat, Inc. (auxiliary key 3) <security@redhat.com>"
+ Fingerprint: 7E46 2425 8C40 6535 D56D 6F13 5054 E4A4 5A63 40B3
+ From       : /etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
+Is this ok [y/N]: y
+Key imported successfully
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                                                                                    1/1
+  Upgrading        : bind-license-32:9.16.23-31.el9_6.noarch                                                                                           1/11
+  Upgrading        : bind-libs-32:9.16.23-31.el9_6.x86_64                                                                                              2/11
+  Upgrading        : bind-utils-32:9.16.23-31.el9_6.x86_64                                                                                             3/11
+  Installing       : bind-dnssec-doc-32:9.16.23-31.el9_6.noarch                                                                                        4/11
+  Installing       : python3-ply-3.11-14.el9.noarch                                                                                                    5/11
+  Installing       : python3-bind-32:9.16.23-31.el9_6.noarch                                                                                           6/11
+  Installing       : bind-dnssec-utils-32:9.16.23-31.el9_6.x86_64                                                                                      7/11
+  Running scriptlet: bind-32:9.16.23-31.el9_6.x86_64                                                                                                   8/11
+  Installing       : bind-32:9.16.23-31.el9_6.x86_64                                                                                                   8/11
+  Running scriptlet: bind-32:9.16.23-31.el9_6.x86_64                                                                                                   8/11
+  Cleanup          : bind-utils-32:9.16.23-28.el9_6.x86_64                                                                                             9/11
+  Cleanup          : bind-libs-32:9.16.23-28.el9_6.x86_64                                                                                             10/11
+  Cleanup          : bind-license-32:9.16.23-28.el9_6.noarch                                                                                          11/11
+  Running scriptlet: bind-license-32:9.16.23-28.el9_6.noarch                                                                                          11/11
+  Verifying        : python3-ply-3.11-14.el9.noarch                                                                                                    1/11
+  Verifying        : bind-32:9.16.23-31.el9_6.x86_64                                                                                                   2/11
+  Verifying        : bind-dnssec-doc-32:9.16.23-31.el9_6.noarch                                                                                        3/11
+  Verifying        : bind-dnssec-utils-32:9.16.23-31.el9_6.x86_64                                                                                      4/11
+  Verifying        : python3-bind-32:9.16.23-31.el9_6.noarch                                                                                           5/11
+  Verifying        : bind-libs-32:9.16.23-31.el9_6.x86_64                                                                                              6/11
+  Verifying        : bind-libs-32:9.16.23-28.el9_6.x86_64                                                                                              7/11
+  Verifying        : bind-license-32:9.16.23-31.el9_6.noarch                                                                                           8/11
+  Verifying        : bind-license-32:9.16.23-28.el9_6.noarch                                                                                           9/11
+  Verifying        : bind-utils-32:9.16.23-31.el9_6.x86_64                                                                                            10/11
+  Verifying        : bind-utils-32:9.16.23-28.el9_6.x86_64                                                                                            11/11
+Installed products updated.
+
+Upgraded:
+  bind-libs-32:9.16.23-31.el9_6.x86_64              bind-license-32:9.16.23-31.el9_6.noarch              bind-utils-32:9.16.23-31.el9_6.x86_64
+Installed:
+  bind-32:9.16.23-31.el9_6.x86_64                  bind-dnssec-doc-32:9.16.23-31.el9_6.noarch          bind-dnssec-utils-32:9.16.23-31.el9_6.x86_64
+  python3-bind-32:9.16.23-31.el9_6.noarch          python3-ply-3.11-14.el9.noarch
+
+Complete!
+[root@localhost yum.repos.d]# yum install vim
+Updating Subscription Management repositories.
+Last metadata expiration check: 0:00:37 ago on Mon 25 Aug 2025 08:17:33 AM IST.
+Package vim-enhanced-2:8.2.2637-21.el9.x86_64 is already installed.
+Dependencies resolved.
+============================================================================================================================================================
+ Package                         Architecture              Version                                Repository                                           Size
+============================================================================================================================================================
+Upgrading:
+ vim-common                      x86_64                    2:8.2.2637-22.el9_6                    rhel-9-for-x86_64-appstream-rpms                    7.0 M
+ vim-enhanced                    x86_64                    2:8.2.2637-22.el9_6                    rhel-9-for-x86_64-appstream-rpms                    1.7 M
+
+Transaction Summary
+============================================================================================================================================================
+Upgrade  2 Packages
+
+Total download size: 8.8 M
+Is this ok [y/N]: y
+Downloading Packages:
+(1/2): vim-common-8.2.2637-22.el9_6.x86_64.rpm                                                                              2.7 MB/s | 7.0 MB     00:02
+(2/2): vim-enhanced-8.2.2637-22.el9_6.x86_64.rpm                                                                            587 kB/s | 1.7 MB     00:03
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                                       2.9 MB/s | 8.8 MB     00:03
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                                                                                    1/1
+  Upgrading        : vim-common-2:8.2.2637-22.el9_6.x86_64                                                                                              1/4
+  Upgrading        : vim-enhanced-2:8.2.2637-22.el9_6.x86_64                                                                                            2/4
+  Cleanup          : vim-enhanced-2:8.2.2637-21.el9.x86_64                                                                                              3/4
+  Cleanup          : vim-common-2:8.2.2637-21.el9.x86_64                                                                                                4/4
+  Running scriptlet: vim-common-2:8.2.2637-21.el9.x86_64                                                                                                4/4
+  Verifying        : vim-common-2:8.2.2637-22.el9_6.x86_64                                                                                              1/4
+  Verifying        : vim-common-2:8.2.2637-21.el9.x86_64                                                                                                2/4
+  Verifying        : vim-enhanced-2:8.2.2637-22.el9_6.x86_64                                                                                            3/4
+  Verifying        : vim-enhanced-2:8.2.2637-21.el9.x86_64                                                                                              4/4
+Installed products updated.
+
+Upgraded:
+  vim-common-2:8.2.2637-22.el9_6.x86_64                                       vim-enhanced-2:8.2.2637-22.el9_6.x86_64
+
+Complete!
+[root@localhost yum.repos.d]# rpm -q vim-enhanced
+vim-enhanced-8.2.2637-22.el9_6.x86_64
+[root@localhost yum.repos.d]# exit
+logout
+Connection to 192.168.29.20 closed.
+
+C:\Users\user>ssh root@192.168.29.20
+root@192.168.29.20's password:
+Activate the web console with: systemctl enable --now cockpit.socket
+
+Register this system with Red Hat Insights: rhc connect
+
+Example:
+# rhc connect --activation-key <key> --organization <org>
+
+The rhc client and Red Hat Insights will enable analytics and additional
+management capabilities on your system.
+View your connected systems at https://console.redhat.com/insights
+
+You can learn more about how to register your system
+using rhc at https://red.ht/registration
+Last login: Mon Aug 25 08:22:03 2025
+[root@localhost ~]#
+[root@localhost ~]# ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: ens160: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 00:0c:29:db:a2:0f brd ff:ff:ff:ff:ff:ff
+    altname enp3s0
+    inet 192.168.29.20/24 brd 192.168.29.255 scope global dynamic noprefixroute ens160
+       valid_lft 7034sec preferred_lft 7034sec
+    inet6 2405:201:5c18:b154:20c:29ff:fedb:a20f/64 scope global dynamic noprefixroute
+       valid_lft 7488sec preferred_lft 7488sec
+    inet6 fe80::20c:29ff:fedb:a20f/64 scope link noprefixroute
+       valid_lft forever preferred_lft forever
+[root@localhost ~]# NODE1_HOSTNAME="node1.example.com"
+[root@localhost ~]# exec bash
+[root@localhost ~]# hostnamectl set-hostname node1.example.com
+[root@localhost ~]# exec bash
+[root@node1 ~]# hostname
+node1.example.com
+[root@node1 ~]#  git clone https://github.com/ravisarswat/kubernetes-setup-scripts.git
+bash: git: command not found...
+Install package 'git-core' to provide command 'git'? [N/y] y
+
+
+ * Waiting in queue...
+ * Loading list of packages....
+The following packages have to be installed:
+ git-core-2.47.3-1.el9_6.x86_64 Core package of git with minimal functionality
+Proceed with changes? [N/y] y
+
+
+ * Waiting in queue...
+ * Waiting for authentication...
+ * Waiting in queue...
+ * Loading list of packages....
+ * Downloading packages...
+ * Requesting data...
+ * Testing changes...
+ * Installing packages...
+Cloning into 'kubernetes-setup-scripts'...
+remote: Enumerating objects: 10, done.
+remote: Counting objects: 100% (10/10), done.
+remote: Compressing objects: 100% (8/8), done.
+remote: Total 10 (delta 1), reused 7 (delta 1), pack-reused 0 (from 0)
+Receiving objects: 100% (10/10), 4.51 KiB | 4.51 MiB/s, done.
+Resolving deltas: 100% (1/1), done.
+
+[root@node1 ~]# ls kubernetes-setup-scripts/install_kubernetes_worker.sh
+kubernetes-setup-scripts/install_kubernetes_worker.sh
+[root@node1 ~]# cat kubernetes-setup-scripts/install_kubernetes_worker.sh
+#!/bin/bash
+
+# This script installs a Kubernetes worker node and joins it to the cluster
+
+# --- CHECK ROOT ---
+if [ "$(id -u)" -ne 0 ]; then
+    echo "❌ This script must be run as root"
+    exit 1
+fi
+
+# --- 1. Disable SELinux ---
+echo "Disabling SELinux..."
+setenforce 0
+sed -i --follow-symlinks 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
+
+# --- 2. Disable Swap ---
+echo "Disabling swap..."
+swapoff -a
+sed -i '/swap/d' /etc/fstab
+
+# --- 3. Enable IP Forwarding ---
+echo "Configuring sysctl for Kubernetes networking..."
+tee /etc/sysctl.d/k8s.conf <<EOF
+net.bridge.bridge-nf-call-iptables = 1
+net.bridge.bridge-nf-call-ip6tables = 1
+net.ipv4.ip_forward = 1
+EOF
+sysctl --system
+
+# --- 4. Load Kernel Modules ---
+echo "Loading kernel modules..."
+modprobe br_netfilter
+tee /etc/modules-load.d/k8s.conf <<EOF
+br_netfilter
+EOF
+
+# --- 5. Disable Firewall (for lab/demo) ---
+echo "Disabling firewalld..."
+systemctl stop firewalld
+systemctl disable firewalld
+
+# --- 6. Install Docker + containerd ---
+echo "Installing Docker and containerd..."
+yum remove -y docker* buildah
+yum install -y yum-utils
+yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+yum install -y docker-ce docker-ce-cli containerd.io
+
+# --- 7. Configure containerd to use systemd ---
+echo "Configuring containerd..."
+containerd config default | tee /etc/containerd/config.toml
+sed -i 's/SystemdCgroup = false/SystemdCgroup = true/g' /etc/containerd/config.toml
+systemctl restart containerd
+
+# --- 8. Start Docker ---
+echo "Starting Docker..."
+systemctl start docker
+systemctl enable docker
+
+# --- 9. Install Kubernetes Components ---
+echo "Installing kubeadm, kubelet, kubectl..."
+cat <<EOF | tee /etc/yum.repos.d/kubernetes.repo
+[kubernetes]
+name=Kubernetes
+baseurl=https://pkgs.k8s.io/core:/stable:/v1.31/rpm/
+enabled=1
+gpgcheck=1
+gpgkey=https://pkgs.k8s.io/core:/stable:/v1.31/rpm/repodata/repomd.xml.key
+EOF
+
+yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
+systemctl enable kubelet
+systemctl start kubelet
+
+# --- 10. Join the Cluster ---
+if [[ -z "$1" ]]; then
+    echo "❌ Please provide the kubeadm join command."
+    echo "Usage: sudo ./install_kubernetes_worker.sh \"<kubeadm join ...>\""
+    exit 1
+else
+    echo "Joining the Kubernetes cluster..."
+    eval "$1"
+    echo "✅ Worker node has successfully joined the cluster!"
+fi
+
+[root@node1 ~]# hostname
+node1.example.com
+[root@node1 ~]#
+[root@node1 ~]# ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: ens160: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 00:0c:29:db:a2:0f brd ff:ff:ff:ff:ff:ff
+    altname enp3s0
+    inet 192.168.29.20/24 brd 192.168.29.255 scope global dynamic noprefixroute ens160
+       valid_lft 6006sec preferred_lft 6006sec
+    inet6 2405:201:5c18:b154:20c:29ff:fedb:a20f/64 scope global dynamic noprefixroute
+       valid_lft 7481sec preferred_lft 7481sec
+    inet6 fe80::20c:29ff:fedb:a20f/64 scope link noprefixroute
+       valid_lft forever preferred_lft forever
+[root@node1 ~]# vim /etc/host
+host.conf  hostname   hosts
+[root@node1 ~]# vim /etc/hosts
+[root@node1 ~]# ping master
+ping node1
+ping node2
+PING master (192.168.29.15) 56(84) bytes of data.
+64 bytes from master (192.168.29.15): icmp_seq=1 ttl=64 time=1.13 ms
+64 bytes from master (192.168.29.15): icmp_seq=2 ttl=64 time=1.16 ms
+^C
+--- master ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1002ms
+rtt min/avg/max/mdev = 1.125/1.140/1.156/0.015 ms
+PING node1 (192.168.29.20) 56(84) bytes of data.
+64 bytes from node1 (192.168.29.20): icmp_seq=1 ttl=64 time=2.72 ms
+64 bytes from node1 (192.168.29.20): icmp_seq=2 ttl=64 time=0.071 ms
+64 bytes from node1 (192.168.29.20): icmp_seq=3 ttl=64 time=13.4 ms
+^C
+--- node1 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2028ms
+rtt min/avg/max/mdev = 0.071/5.405/13.427/5.774 ms
+PING node2 (192.168.29.95) 56(84) bytes of data.
+64 bytes from node2 (192.168.29.95): icmp_seq=1 ttl=64 time=12.4 ms
+64 bytes from node2 (192.168.29.95): icmp_seq=2 ttl=64 time=1.50 ms
+64 bytes from node2 (192.168.29.95): icmp_seq=3 ttl=64 time=0.867 ms
+^C
+--- node2 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2004ms
+rtt min/avg/max/mdev = 0.867/4.922/12.398/5.292 ms
+[root@node1 ~]# cd /root/kubernetes-setup-scripts
+[root@node1 kubernetes-setup-scripts]# chmod +x install_kubernetes_worker.sh
+[root@node1 kubernetes-setup-scripts]# ./install_kubernetes_worker.sh
+Disabling SELinux...
+Disabling swap...
+Configuring sysctl for Kubernetes networking...
+net.bridge.bridge-nf-call-iptables = 1
+net.bridge.bridge-nf-call-ip6tables = 1
+net.ipv4.ip_forward = 1
+* Applying /usr/lib/sysctl.d/10-default-yama-scope.conf ...
+* Applying /usr/lib/sysctl.d/50-coredump.conf ...
+* Applying /usr/lib/sysctl.d/50-default.conf ...
+* Applying /usr/lib/sysctl.d/50-libkcapi-optmem_max.conf ...
+* Applying /usr/lib/sysctl.d/50-pid-max.conf ...
+* Applying /usr/lib/sysctl.d/50-redhat.conf ...
+* Applying /etc/sysctl.d/99-sysctl.conf ...
+* Applying /etc/sysctl.d/k8s.conf ...
+* Applying /etc/sysctl.conf ...
+kernel.yama.ptrace_scope = 0
+kernel.core_pattern = |/usr/lib/systemd/systemd-coredump %P %u %g %s %t %c %h
+kernel.core_pipe_limit = 16
+fs.suid_dumpable = 2
+kernel.sysrq = 16
+kernel.core_uses_pid = 1
+net.ipv4.conf.default.rp_filter = 2
+net.ipv4.conf.ens160.rp_filter = 2
+net.ipv4.conf.lo.rp_filter = 2
+net.ipv4.conf.default.accept_source_route = 0
+net.ipv4.conf.ens160.accept_source_route = 0
+net.ipv4.conf.lo.accept_source_route = 0
+net.ipv4.conf.default.promote_secondaries = 1
+net.ipv4.conf.ens160.promote_secondaries = 1
+net.ipv4.conf.lo.promote_secondaries = 1
+net.ipv4.ping_group_range = 0 2147483647
+net.core.default_qdisc = fq_codel
+fs.protected_hardlinks = 1
+fs.protected_symlinks = 1
+fs.protected_regular = 1
+fs.protected_fifos = 1
+net.core.optmem_max = 81920
+kernel.pid_max = 4194304
+kernel.kptr_restrict = 1
+net.ipv4.conf.default.rp_filter = 1
+net.ipv4.conf.ens160.rp_filter = 1
+net.ipv4.conf.lo.rp_filter = 1
+net.ipv4.ip_forward = 1
+Loading kernel modules...
+br_netfilter
+Disabling firewalld...
+Removed "/etc/systemd/system/multi-user.target.wants/firewalld.service".
+Removed "/etc/systemd/system/dbus-org.fedoraproject.FirewallD1.service".
+Installing Docker and containerd...
+Updating Subscription Management repositories.
+Dependencies resolved.
+============================================================================================================================================================
+ Package                                     Architecture               Version                                        Repository                      Size
+============================================================================================================================================================
+Removing:
+ buildah                                     x86_64                     2:1.39.0-2.el9                                 @AppStream                      36 M
+ container-selinux                           noarch                     3:2.235.0-1.el9_6                              @AppStream                      72 k
+Removing dependent packages:
+ flatpak-selinux                             noarch                     1.12.9-4.el9_6                                 @AppStream                      13 k
+ passt-selinux                               noarch                     0^20250217.ga1e48a0-1.el9                      @AppStream                     289 k
+ selinux-policy                              noarch                     38.1.53-2.el9                                  @anaconda                       25 k
+ selinux-policy-targeted                     noarch                     38.1.53-2.el9                                  @anaconda                       18 M
+Removing unused dependencies:
+ containers-common-extra                     x86_64                     2:1-117.el9_6                                  @AppStream                       0
+ rpm-plugin-selinux                          x86_64                     4.16.1.3-37.el9                                @anaconda                       16 k
+
+Transaction Summary
+============================================================================================================================================================
+Remove  8 Packages
+
+Freed space: 55 M
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                                                                                    1/1
+  Erasing          : container-selinux-3:2.235.0-1.el9_6.noarch                                                                                         1/8
+  Running scriptlet: container-selinux-3:2.235.0-1.el9_6.noarch                                                                                         1/8
+  Erasing          : flatpak-selinux-1.12.9-4.el9_6.noarch                                                                                              2/8
+  Running scriptlet: flatpak-selinux-1.12.9-4.el9_6.noarch                                                                                              2/8
+  Erasing          : passt-selinux-0^20250217.ga1e48a0-1.el9.noarch                                                                                     3/8
+  Running scriptlet: passt-selinux-0^20250217.ga1e48a0-1.el9.noarch                                                                                     3/8
+  Erasing          : rpm-plugin-selinux-4.16.1.3-37.el9.x86_64                                                                                          4/8
+  Running scriptlet: selinux-policy-38.1.53-2.el9.noarch                                                                                                5/8
+  Erasing          : selinux-policy-38.1.53-2.el9.noarch                                                                                                5/8
+  Running scriptlet: selinux-policy-38.1.53-2.el9.noarch                                                                                                5/8
+  Erasing          : buildah-2:1.39.0-2.el9.x86_64                                                                                                      6/8
+  Erasing          : containers-common-extra-2:1-117.el9_6.x86_64                                                                                       7/8
+  Erasing          : selinux-policy-targeted-38.1.53-2.el9.noarch                                                                                       8/8
+  Running scriptlet: selinux-policy-targeted-38.1.53-2.el9.noarch                                                                                       8/8
+  Verifying        : buildah-2:1.39.0-2.el9.x86_64                                                                                                      1/8
+  Verifying        : container-selinux-3:2.235.0-1.el9_6.noarch                                                                                         2/8
+  Verifying        : containers-common-extra-2:1-117.el9_6.x86_64                                                                                       3/8
+  Verifying        : flatpak-selinux-1.12.9-4.el9_6.noarch                                                                                              4/8
+  Verifying        : passt-selinux-0^20250217.ga1e48a0-1.el9.noarch                                                                                     5/8
+  Verifying        : rpm-plugin-selinux-4.16.1.3-37.el9.x86_64                                                                                          6/8
+  Verifying        : selinux-policy-38.1.53-2.el9.noarch                                                                                                7/8
+  Verifying        : selinux-policy-targeted-38.1.53-2.el9.noarch                                                                                       8/8
+Installed products updated.
+
+Removed:
+  buildah-2:1.39.0-2.el9.x86_64                 container-selinux-3:2.235.0-1.el9_6.noarch             containers-common-extra-2:1-117.el9_6.x86_64
+  flatpak-selinux-1.12.9-4.el9_6.noarch         passt-selinux-0^20250217.ga1e48a0-1.el9.noarch         rpm-plugin-selinux-4.16.1.3-37.el9.x86_64
+  selinux-policy-38.1.53-2.el9.noarch           selinux-policy-targeted-38.1.53-2.el9.noarch
+
+Complete!
+Updating Subscription Management repositories.
+Last metadata expiration check: 0:35:37 ago on Mon 25 Aug 2025 08:17:33 AM IST.
+Dependencies resolved.
+============================================================================================================================================================
+ Package                         Architecture                 Version                             Repository                                           Size
+============================================================================================================================================================
+Installing:
+ yum-utils                       noarch                       4.3.0-20.el9                        rhel-9-for-x86_64-baseos-rpms                        44 k
+
+Transaction Summary
+============================================================================================================================================================
+Install  1 Package
+
+Total download size: 44 k
+Installed size: 23 k
+Downloading Packages:
+yum-utils-4.3.0-20.el9.noarch.rpm                                                                                           104 kB/s |  44 kB     00:00
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                                       103 kB/s |  44 kB     00:00
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                                                                                    1/1
+  Installing       : yum-utils-4.3.0-20.el9.noarch                                                                                                      1/1
+  Running scriptlet: yum-utils-4.3.0-20.el9.noarch                                                                                                      1/1
+  Verifying        : yum-utils-4.3.0-20.el9.noarch                                                                                                      1/1
+Installed products updated.
+
+Installed:
+  yum-utils-4.3.0-20.el9.noarch
+
+Complete!
+Updating Subscription Management repositories.
+Adding repo from: https://download.docker.com/linux/centos/docker-ce.repo
+Updating Subscription Management repositories.
+Docker CE Stable - x86_64                                                                                                   130 kB/s |  78 kB     00:00
+Dependencies resolved.
+============================================================================================================================================================
+ Package                                 Architecture         Version                                  Repository                                      Size
+============================================================================================================================================================
+Installing:
+ containerd.io                           x86_64               1.7.27-3.1.el9                           docker-ce-stable                                44 M
+ docker-ce                               x86_64               3:28.3.3-1.el9                           docker-ce-stable                                21 M
+ docker-ce-cli                           x86_64               1:28.3.3-1.el9                           docker-ce-stable                               8.6 M
+Installing dependencies:
+ container-selinux                       noarch               4:2.237.0-1.el9_6                        rhel-9-for-x86_64-appstream-rpms                61 k
+ flatpak-selinux                         noarch               1.12.9-4.el9_6                           rhel-9-for-x86_64-appstream-rpms                22 k
+ passt-selinux                           noarch               0^20250217.ga1e48a0-1.el9                rhel-9-for-x86_64-appstream-rpms                30 k
+ rpm-plugin-selinux                      x86_64               4.16.1.3-37.el9                          rhel-9-for-x86_64-baseos-rpms                   18 k
+ selinux-policy                          noarch               38.1.53-5.el9_6                          rhel-9-for-x86_64-baseos-rpms                   45 k
+ selinux-policy-targeted                 noarch               38.1.53-5.el9_6                          rhel-9-for-x86_64-baseos-rpms                  6.9 M
+Installing weak dependencies:
+ docker-buildx-plugin                    x86_64               0.26.1-1.el9                             docker-ce-stable                                16 M
+ docker-ce-rootless-extras               x86_64               28.3.3-1.el9                             docker-ce-stable                               3.4 M
+ docker-compose-plugin                   x86_64               2.39.1-1.el9                             docker-ce-stable                                15 M
+
+Transaction Summary
+============================================================================================================================================================
+Install  12 Packages
+
+Total download size: 116 M
+Installed size: 454 M
+Downloading Packages:
+(1/12): docker-buildx-plugin-0.26.1-1.el9.x86_64.rpm                                                                        567 kB/s |  16 MB     00:29
+(2/12): docker-ce-28.3.3-1.el9.x86_64.rpm                                                                                   518 kB/s |  21 MB     00:40
+(3/12): docker-ce-rootless-extras-28.3.3-1.el9.x86_64.rpm                                                                   198 kB/s | 3.4 MB     00:17
+(4/12): docker-ce-cli-28.3.3-1.el9.x86_64.rpm                                                                               270 kB/s | 8.6 MB     00:32
+(5/12): rpm-plugin-selinux-4.16.1.3-37.el9.x86_64.rpm                                                                        32 kB/s |  18 kB     00:00
+(6/12): selinux-policy-38.1.53-5.el9_6.noarch.rpm                                                                           102 kB/s |  45 kB     00:00
+(7/12): selinux-policy-targeted-38.1.53-5.el9_6.noarch.rpm                                                                  2.2 MB/s | 6.9 MB     00:03
+(8/12): passt-selinux-0^20250217.ga1e48a0-1.el9.noarch.rpm                                                                   86 kB/s |  30 kB     00:00
+(9/12): flatpak-selinux-1.12.9-4.el9_6.noarch.rpm                                                                            59 kB/s |  22 kB     00:00
+(10/12): container-selinux-2.237.0-1.el9_6.noarch.rpm                                                                       147 kB/s |  61 kB     00:00
+(11/12): containerd.io-1.7.27-3.1.el9.x86_64.rpm                                                                            591 kB/s |  44 MB     01:16
+(12/12): docker-compose-plugin-2.39.1-1.el9.x86_64.rpm                                                                      806 kB/s |  15 MB     00:19
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                                       1.5 MB/s | 116 MB     01:17
+Docker CE Stable - x86_64                                                                                                    23 kB/s | 1.6 kB     00:00
+Importing GPG key 0x621E9F35:
+ Userid     : "Docker Release (CE rpm) <docker@docker.com>"
+ Fingerprint: 060A 61C5 1B55 8A7F 742B 77AA C52F EB6B 621E 9F35
+ From       : https://download.docker.com/linux/centos/gpg
+Key imported successfully
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Running scriptlet: selinux-policy-targeted-38.1.53-5.el9_6.noarch                                                                                     1/1
+  Preparing        :                                                                                                                                    1/1
+  Installing       : selinux-policy-38.1.53-5.el9_6.noarch                                                                                             1/12
+  Running scriptlet: selinux-policy-38.1.53-5.el9_6.noarch                                                                                             1/12
+Failed to resolve roletype statement at /var/lib/selinux/targeted/tmp/modules/200/cockpit/cil:2
+Failed to resolve AST
+/usr/sbin/semodule:  Failed!
+
+  Running scriptlet: selinux-policy-targeted-38.1.53-5.el9_6.noarch                                                                                    2/12
+  Installing       : selinux-policy-targeted-38.1.53-5.el9_6.noarch                                                                                    2/12
+  Running scriptlet: selinux-policy-targeted-38.1.53-5.el9_6.noarch                                                                                    2/12
+  Running scriptlet: container-selinux-4:2.237.0-1.el9_6.noarch                                                                                        3/12
+  Installing       : container-selinux-4:2.237.0-1.el9_6.noarch                                                                                        3/12
+  Running scriptlet: container-selinux-4:2.237.0-1.el9_6.noarch                                                                                        3/12
+  Installing       : docker-buildx-plugin-0.26.1-1.el9.x86_64                                                                                          4/12
+  Running scriptlet: docker-buildx-plugin-0.26.1-1.el9.x86_64                                                                                          4/12
+  Installing       : docker-compose-plugin-2.39.1-1.el9.x86_64                                                                                         5/12
+  Running scriptlet: docker-compose-plugin-2.39.1-1.el9.x86_64                                                                                         5/12
+  Installing       : docker-ce-cli-1:28.3.3-1.el9.x86_64                                                                                               6/12
+  Running scriptlet: docker-ce-cli-1:28.3.3-1.el9.x86_64                                                                                               6/12
+  Installing       : containerd.io-1.7.27-3.1.el9.x86_64                                                                                               7/12
+  Running scriptlet: containerd.io-1.7.27-3.1.el9.x86_64                                                                                               7/12
+  Installing       : docker-ce-rootless-extras-28.3.3-1.el9.x86_64                                                                                     8/12
+  Running scriptlet: docker-ce-rootless-extras-28.3.3-1.el9.x86_64                                                                                     8/12
+  Installing       : docker-ce-3:28.3.3-1.el9.x86_64                                                                                                   9/12
+  Running scriptlet: docker-ce-3:28.3.3-1.el9.x86_64                                                                                                   9/12
+  Installing       : rpm-plugin-selinux-4.16.1.3-37.el9.x86_64                                                                                        10/12
+  Running scriptlet: passt-selinux-0^20250217.ga1e48a0-1.el9.noarch                                                                                   11/12
+  Installing       : passt-selinux-0^20250217.ga1e48a0-1.el9.noarch                                                                                   11/12
+  Running scriptlet: passt-selinux-0^20250217.ga1e48a0-1.el9.noarch                                                                                   11/12
+  Installing       : flatpak-selinux-1.12.9-4.el9_6.noarch                                                                                            12/12
+  Running scriptlet: flatpak-selinux-1.12.9-4.el9_6.noarch                                                                                            12/12
+  Running scriptlet: selinux-policy-targeted-38.1.53-5.el9_6.noarch                                                                                   12/12
+  Running scriptlet: container-selinux-4:2.237.0-1.el9_6.noarch                                                                                       12/12
+  Running scriptlet: passt-selinux-0^20250217.ga1e48a0-1.el9.noarch                                                                                   12/12
+  Running scriptlet: flatpak-selinux-1.12.9-4.el9_6.noarch                                                                                            12/12
+  Verifying        : containerd.io-1.7.27-3.1.el9.x86_64                                                                                               1/12
+  Verifying        : docker-buildx-plugin-0.26.1-1.el9.x86_64                                                                                          2/12
+  Verifying        : docker-ce-3:28.3.3-1.el9.x86_64                                                                                                   3/12
+  Verifying        : docker-ce-cli-1:28.3.3-1.el9.x86_64                                                                                               4/12
+  Verifying        : docker-ce-rootless-extras-28.3.3-1.el9.x86_64                                                                                     5/12
+  Verifying        : docker-compose-plugin-2.39.1-1.el9.x86_64                                                                                         6/12
+  Verifying        : rpm-plugin-selinux-4.16.1.3-37.el9.x86_64                                                                                         7/12
+  Verifying        : selinux-policy-38.1.53-5.el9_6.noarch                                                                                             8/12
+  Verifying        : selinux-policy-targeted-38.1.53-5.el9_6.noarch                                                                                    9/12
+  Verifying        : passt-selinux-0^20250217.ga1e48a0-1.el9.noarch                                                                                   10/12
+  Verifying        : flatpak-selinux-1.12.9-4.el9_6.noarch                                                                                            11/12
+  Verifying        : container-selinux-4:2.237.0-1.el9_6.noarch                                                                                       12/12
+Installed products updated.
+
+Installed:
+  container-selinux-4:2.237.0-1.el9_6.noarch          containerd.io-1.7.27-3.1.el9.x86_64            docker-buildx-plugin-0.26.1-1.el9.x86_64
+  docker-ce-3:28.3.3-1.el9.x86_64                     docker-ce-cli-1:28.3.3-1.el9.x86_64            docker-ce-rootless-extras-28.3.3-1.el9.x86_64
+  docker-compose-plugin-2.39.1-1.el9.x86_64           flatpak-selinux-1.12.9-4.el9_6.noarch          passt-selinux-0^20250217.ga1e48a0-1.el9.noarch
+  rpm-plugin-selinux-4.16.1.3-37.el9.x86_64           selinux-policy-38.1.53-5.el9_6.noarch          selinux-policy-targeted-38.1.53-5.el9_6.noarch
+
+Complete!
+Configuring containerd...
+disabled_plugins = []
+imports = []
+oom_score = 0
+plugin_dir = ""
+required_plugins = []
+root = "/var/lib/containerd"
+state = "/run/containerd"
+temp = ""
+version = 2
+
+[cgroup]
+  path = ""
+
+[debug]
+  address = ""
+  format = ""
+  gid = 0
+  level = ""
+  uid = 0
+
+[grpc]
+  address = "/run/containerd/containerd.sock"
+  gid = 0
+  max_recv_message_size = 16777216
+  max_send_message_size = 16777216
+  tcp_address = ""
+  tcp_tls_ca = ""
+  tcp_tls_cert = ""
+  tcp_tls_key = ""
+  uid = 0
+
+[metrics]
+  address = ""
+  grpc_histogram = false
+
+[plugins]
+
+  [plugins."io.containerd.gc.v1.scheduler"]
+    deletion_threshold = 0
+    mutation_threshold = 100
+    pause_threshold = 0.02
+    schedule_delay = "0s"
+    startup_delay = "100ms"
+
+  [plugins."io.containerd.grpc.v1.cri"]
+    cdi_spec_dirs = ["/etc/cdi", "/var/run/cdi"]
+    device_ownership_from_security_context = false
+    disable_apparmor = false
+    disable_cgroup = false
+    disable_hugetlb_controller = true
+    disable_proc_mount = false
+    disable_tcp_service = true
+    drain_exec_sync_io_timeout = "0s"
+    enable_cdi = false
+    enable_selinux = false
+    enable_tls_streaming = false
+    enable_unprivileged_icmp = false
+    enable_unprivileged_ports = false
+    ignore_deprecation_warnings = []
+    ignore_image_defined_volumes = false
+    image_pull_progress_timeout = "5m0s"
+    image_pull_with_sync_fs = false
+    max_concurrent_downloads = 3
+    max_container_log_line_size = 16384
+    netns_mounts_under_state_dir = false
+    restrict_oom_score_adj = false
+    sandbox_image = "registry.k8s.io/pause:3.8"
+    selinux_category_range = 1024
+    stats_collect_period = 10
+    stream_idle_timeout = "4h0m0s"
+    stream_server_address = "127.0.0.1"
+    stream_server_port = "0"
+    systemd_cgroup = false
+    tolerate_missing_hugetlb_controller = true
+    unset_seccomp_profile = ""
+
+    [plugins."io.containerd.grpc.v1.cri".cni]
+      bin_dir = "/opt/cni/bin"
+      conf_dir = "/etc/cni/net.d"
+      conf_template = ""
+      ip_pref = ""
+      max_conf_num = 1
+      setup_serially = false
+
+    [plugins."io.containerd.grpc.v1.cri".containerd]
+      default_runtime_name = "runc"
+      disable_snapshot_annotations = true
+      discard_unpacked_layers = false
+      ignore_blockio_not_enabled_errors = false
+      ignore_rdt_not_enabled_errors = false
+      no_pivot = false
+      snapshotter = "overlayfs"
+
+      [plugins."io.containerd.grpc.v1.cri".containerd.default_runtime]
+        base_runtime_spec = ""
+        cni_conf_dir = ""
+        cni_max_conf_num = 0
+        container_annotations = []
+        pod_annotations = []
+        privileged_without_host_devices = false
+        privileged_without_host_devices_all_devices_allowed = false
+        runtime_engine = ""
+        runtime_path = ""
+        runtime_root = ""
+        runtime_type = ""
+        sandbox_mode = ""
+        snapshotter = ""
+
+        [plugins."io.containerd.grpc.v1.cri".containerd.default_runtime.options]
+
+      [plugins."io.containerd.grpc.v1.cri".containerd.runtimes]
+
+        [plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runc]
+          base_runtime_spec = ""
+          cni_conf_dir = ""
+          cni_max_conf_num = 0
+          container_annotations = []
+          pod_annotations = []
+          privileged_without_host_devices = false
+          privileged_without_host_devices_all_devices_allowed = false
+          runtime_engine = ""
+          runtime_path = ""
+          runtime_root = ""
+          runtime_type = "io.containerd.runc.v2"
+          sandbox_mode = "podsandbox"
+          snapshotter = ""
+
+          [plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runc.options]
+            BinaryName = ""
+            CriuImagePath = ""
+            CriuPath = ""
+            CriuWorkPath = ""
+            IoGid = 0
+            IoUid = 0
+            NoNewKeyring = false
+            NoPivotRoot = false
+            Root = ""
+            ShimCgroup = ""
+            SystemdCgroup = false
+
+      [plugins."io.containerd.grpc.v1.cri".containerd.untrusted_workload_runtime]
+        base_runtime_spec = ""
+        cni_conf_dir = ""
+        cni_max_conf_num = 0
+        container_annotations = []
+        pod_annotations = []
+        privileged_without_host_devices = false
+        privileged_without_host_devices_all_devices_allowed = false
+        runtime_engine = ""
+        runtime_path = ""
+        runtime_root = ""
+        runtime_type = ""
+        sandbox_mode = ""
+        snapshotter = ""
+
+        [plugins."io.containerd.grpc.v1.cri".containerd.untrusted_workload_runtime.options]
+
+    [plugins."io.containerd.grpc.v1.cri".image_decryption]
+      key_model = "node"
+
+    [plugins."io.containerd.grpc.v1.cri".registry]
+      config_path = ""
+
+      [plugins."io.containerd.grpc.v1.cri".registry.auths]
+
+      [plugins."io.containerd.grpc.v1.cri".registry.configs]
+
+      [plugins."io.containerd.grpc.v1.cri".registry.headers]
+
+      [plugins."io.containerd.grpc.v1.cri".registry.mirrors]
+
+    [plugins."io.containerd.grpc.v1.cri".x509_key_pair_streaming]
+      tls_cert_file = ""
+      tls_key_file = ""
+
+  [plugins."io.containerd.internal.v1.opt"]
+    path = "/opt/containerd"
+
+  [plugins."io.containerd.internal.v1.restart"]
+    interval = "10s"
+
+  [plugins."io.containerd.internal.v1.tracing"]
+
+  [plugins."io.containerd.metadata.v1.bolt"]
+    content_sharing_policy = "shared"
+
+  [plugins."io.containerd.monitor.v1.cgroups"]
+    no_prometheus = false
+
+  [plugins."io.containerd.nri.v1.nri"]
+    disable = true
+    disable_connections = false
+    plugin_config_path = "/etc/nri/conf.d"
+    plugin_path = "/opt/nri/plugins"
+    plugin_registration_timeout = "5s"
+    plugin_request_timeout = "2s"
+    socket_path = "/var/run/nri/nri.sock"
+
+  [plugins."io.containerd.runtime.v1.linux"]
+    no_shim = false
+    runtime = "runc"
+    runtime_root = ""
+    shim = "containerd-shim"
+    shim_debug = false
+
+  [plugins."io.containerd.runtime.v2.task"]
+    platforms = ["linux/amd64"]
+    sched_core = false
+
+  [plugins."io.containerd.service.v1.diff-service"]
+    default = ["walking"]
+    sync_fs = false
+
+  [plugins."io.containerd.service.v1.tasks-service"]
+    blockio_config_file = ""
+    rdt_config_file = ""
+
+  [plugins."io.containerd.snapshotter.v1.aufs"]
+    root_path = ""
+
+  [plugins."io.containerd.snapshotter.v1.blockfile"]
+    fs_type = ""
+    mount_options = []
+    root_path = ""
+    scratch_file = ""
+
+  [plugins."io.containerd.snapshotter.v1.devmapper"]
+    async_remove = false
+    base_image_size = ""
+    discard_blocks = false
+    fs_options = ""
+    fs_type = ""
+    pool_name = ""
+    root_path = ""
+
+  [plugins."io.containerd.snapshotter.v1.native"]
+    root_path = ""
+
+  [plugins."io.containerd.snapshotter.v1.overlayfs"]
+    mount_options = []
+    root_path = ""
+    sync_remove = false
+    upperdir_label = false
+
+  [plugins."io.containerd.snapshotter.v1.zfs"]
+    root_path = ""
+
+  [plugins."io.containerd.tracing.processor.v1.otlp"]
+
+  [plugins."io.containerd.transfer.v1.local"]
+    config_path = ""
+    max_concurrent_downloads = 3
+    max_concurrent_uploaded_layers = 3
+
+    [[plugins."io.containerd.transfer.v1.local".unpack_config]]
+      differ = ""
+      platform = "linux/amd64"
+      snapshotter = "overlayfs"
+
+[proxy_plugins]
+
+[stream_processors]
+
+  [stream_processors."io.containerd.ocicrypt.decoder.v1.tar"]
+    accepts = ["application/vnd.oci.image.layer.v1.tar+encrypted"]
+    args = ["--decryption-keys-path", "/etc/containerd/ocicrypt/keys"]
+    env = ["OCICRYPT_KEYPROVIDER_CONFIG=/etc/containerd/ocicrypt/ocicrypt_keyprovider.conf"]
+    path = "ctd-decoder"
+    returns = "application/vnd.oci.image.layer.v1.tar"
+
+  [stream_processors."io.containerd.ocicrypt.decoder.v1.tar.gzip"]
+    accepts = ["application/vnd.oci.image.layer.v1.tar+gzip+encrypted"]
+    args = ["--decryption-keys-path", "/etc/containerd/ocicrypt/keys"]
+    env = ["OCICRYPT_KEYPROVIDER_CONFIG=/etc/containerd/ocicrypt/ocicrypt_keyprovider.conf"]
+    path = "ctd-decoder"
+    returns = "application/vnd.oci.image.layer.v1.tar+gzip"
+
+[timeouts]
+  "io.containerd.timeout.bolt.open" = "0s"
+  "io.containerd.timeout.metrics.shimstats" = "2s"
+  "io.containerd.timeout.shim.cleanup" = "5s"
+  "io.containerd.timeout.shim.load" = "5s"
+  "io.containerd.timeout.shim.shutdown" = "3s"
+  "io.containerd.timeout.task.state" = "2s"
+
+[ttrpc]
+  address = ""
+  gid = 0
+  uid = 0
+Starting Docker...
+Created symlink /etc/systemd/system/multi-user.target.wants/docker.service → /usr/lib/systemd/system/docker.service.
+Installing kubeadm, kubelet, kubectl...
+[kubernetes]
+name=Kubernetes
+baseurl=https://pkgs.k8s.io/core:/stable:/v1.31/rpm/
+enabled=1
+gpgcheck=1
+gpgkey=https://pkgs.k8s.io/core:/stable:/v1.31/rpm/repodata/repomd.xml.key
+Updating Subscription Management repositories.
+Kubernetes                                                                                                                   31 kB/s |  32 kB     00:01
+Dependencies resolved.
+============================================================================================================================================================
+ Package                                Architecture           Version                               Repository                                        Size
+============================================================================================================================================================
+Installing:
+ kubeadm                                x86_64                 1.31.12-150500.1.1                    kubernetes                                        11 M
+ kubectl                                x86_64                 1.31.12-150500.1.1                    kubernetes                                        11 M
+ kubelet                                x86_64                 1.31.12-150500.1.1                    kubernetes                                        15 M
+Installing dependencies:
+ conntrack-tools                        x86_64                 1.4.7-4.el9_5                         rhel-9-for-x86_64-appstream-rpms                 240 k
+ cri-tools                              x86_64                 1.31.1-150500.1.1                     kubernetes                                       6.9 M
+ kubernetes-cni                         x86_64                 1.5.1-150500.1.1                      kubernetes                                       7.1 M
+ libnetfilter_cthelper                  x86_64                 1.0.0-22.el9                          rhel-9-for-x86_64-appstream-rpms                  26 k
+ libnetfilter_cttimeout                 x86_64                 1.0.0-19.el9                          rhel-9-for-x86_64-appstream-rpms                  25 k
+ libnetfilter_queue                     x86_64                 1.0.5-1.el9                           rhel-9-for-x86_64-appstream-rpms                  31 k
+
+Transaction Summary
+============================================================================================================================================================
+Install  9 Packages
+
+Total download size: 51 M
+Installed size: 270 M
+Downloading Packages:
+(1/9): cri-tools-1.31.1-150500.1.1.x86_64.rpm                                                                               1.2 MB/s | 6.9 MB     00:05
+(2/9): kubectl-1.31.12-150500.1.1.x86_64.rpm                                                                                707 kB/s |  11 MB     00:15
+(3/9): kubeadm-1.31.12-150500.1.1.x86_64.rpm                                                                                669 kB/s |  11 MB     00:16
+(4/9): libnetfilter_cthelper-1.0.0-22.el9.x86_64.rpm                                                                         52 kB/s |  26 kB     00:00
+(5/9): libnetfilter_cttimeout-1.0.0-19.el9.x86_64.rpm                                                                        72 kB/s |  25 kB     00:00
+(6/9): libnetfilter_queue-1.0.5-1.el9.x86_64.rpm                                                                             78 kB/s |  31 kB     00:00
+(7/9): conntrack-tools-1.4.7-4.el9_5.x86_64.rpm                                                                             142 kB/s | 240 kB     00:01
+(8/9): kubernetes-cni-1.5.1-150500.1.1.x86_64.rpm                                                                           535 kB/s | 7.1 MB     00:13
+(9/9): kubelet-1.31.12-150500.1.1.x86_64.rpm                                                                                583 kB/s |  15 MB     00:25
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                                       1.6 MB/s |  51 MB     00:31
+Kubernetes                                                                                                                  4.1 kB/s | 1.7 kB     00:00
+Importing GPG key 0x9A296436:
+ Userid     : "isv:kubernetes OBS Project <isv:kubernetes@build.opensuse.org>"
+ Fingerprint: DE15 B144 86CD 377B 9E87 6E1A 2346 54DA 9A29 6436
+ From       : https://pkgs.k8s.io/core:/stable:/v1.31/rpm/repodata/repomd.xml.key
+Key imported successfully
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                                                                                    1/1
+  Installing       : libnetfilter_queue-1.0.5-1.el9.x86_64                                                                                              1/9
+  Installing       : libnetfilter_cttimeout-1.0.0-19.el9.x86_64                                                                                         2/9
+  Installing       : libnetfilter_cthelper-1.0.0-22.el9.x86_64                                                                                          3/9
+  Installing       : conntrack-tools-1.4.7-4.el9_5.x86_64                                                                                               4/9
+  Running scriptlet: conntrack-tools-1.4.7-4.el9_5.x86_64                                                                                               4/9
+  Installing       : kubernetes-cni-1.5.1-150500.1.1.x86_64                                                                                             5/9
+  Installing       : cri-tools-1.31.1-150500.1.1.x86_64                                                                                                 6/9
+  Installing       : kubeadm-1.31.12-150500.1.1.x86_64                                                                                                  7/9
+  Installing       : kubelet-1.31.12-150500.1.1.x86_64                                                                                                  8/9
+  Running scriptlet: kubelet-1.31.12-150500.1.1.x86_64                                                                                                  8/9
+  Installing       : kubectl-1.31.12-150500.1.1.x86_64                                                                                                  9/9
+  Running scriptlet: kubectl-1.31.12-150500.1.1.x86_64                                                                                                  9/9
+  Verifying        : cri-tools-1.31.1-150500.1.1.x86_64                                                                                                 1/9
+  Verifying        : kubeadm-1.31.12-150500.1.1.x86_64                                                                                                  2/9
+  Verifying        : kubectl-1.31.12-150500.1.1.x86_64                                                                                                  3/9
+  Verifying        : kubelet-1.31.12-150500.1.1.x86_64                                                                                                  4/9
+  Verifying        : kubernetes-cni-1.5.1-150500.1.1.x86_64                                                                                             5/9
+  Verifying        : libnetfilter_cthelper-1.0.0-22.el9.x86_64                                                                                          6/9
+  Verifying        : libnetfilter_cttimeout-1.0.0-19.el9.x86_64                                                                                         7/9
+  Verifying        : libnetfilter_queue-1.0.5-1.el9.x86_64                                                                                              8/9
+  Verifying        : conntrack-tools-1.4.7-4.el9_5.x86_64                                                                                               9/9
+Installed products updated.
+
+Installed:
+  conntrack-tools-1.4.7-4.el9_5.x86_64                cri-tools-1.31.1-150500.1.1.x86_64                   kubeadm-1.31.12-150500.1.1.x86_64
+  kubectl-1.31.12-150500.1.1.x86_64                   kubelet-1.31.12-150500.1.1.x86_64                    kubernetes-cni-1.5.1-150500.1.1.x86_64
+  libnetfilter_cthelper-1.0.0-22.el9.x86_64           libnetfilter_cttimeout-1.0.0-19.el9.x86_64           libnetfilter_queue-1.0.5-1.el9.x86_64
+
+Complete!
+Created symlink /etc/systemd/system/multi-user.target.wants/kubelet.service → /usr/lib/systemd/system/kubelet.service.
+❌ Please provide the kubeadm join command.
+Usage: sudo ./install_kubernetes_worker.sh "<kubeadm join ...>"
+[root@node1 kubernetes-setup-scripts]# kubeadm join 192.168.29.15:6443 --token 8s9hvl.ozsxfy6ldw7t9tjb --discovery-token-ca-cert-hash sha256:6628e8b12b62122347092cda1dc95cc4e74b2709f477eb8252a5f8c2bb6777c0
+[preflight] Running pre-flight checks
+[preflight] Reading configuration from the cluster...
+[preflight] FYI: You can look at this config file with 'kubectl -n kube-system get cm kubeadm-config -o yaml'
+[kubelet-start] Writing kubelet configuration to file "/var/lib/kubelet/config.yaml"
+[kubelet-start] Writing kubelet environment file with flags to file "/var/lib/kubelet/kubeadm-flags.env"
+[kubelet-start] Starting the kubelet
+[kubelet-check] Waiting for a healthy kubelet at http://127.0.0.1:10248/healthz. This can take up to 4m0s
+[kubelet-check] The kubelet is healthy after 1.004738632s
+[kubelet-start] Waiting for the kubelet to perform the TLS Bootstrap
+
+This node has joined the cluster:
+* Certificate signing request was sent to apiserver and a response was received.
+* The Kubelet was informed of the new secure connection details.
+
+Run 'kubectl get nodes' on the control-plane to see this node join the cluster.
+
+[root@node1 kubernetes-setup-scripts]#
