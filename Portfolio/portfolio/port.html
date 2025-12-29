@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <script src="https://kit.fontawesome.com/a6521e647c.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a6521e647c.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- header section -->
+<div id="header">
+    <div class="container">
+        <nav>
+            <img src="Yuvz-removebg-preview.png" class="logo">
+            <ul id="sidemenu">
+                <li><a  href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#"></a></li>
+                <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+            <p>Frotend devloper</p>
+            <h1>hi, I'm <span>Yuvz</span><br>Saini from India</h1>
+        </div>
+    </div>
+</div>
+<!-- about sectiom -->
+ <div id="about">
+    <div class="container">
+        <div class="rows">
+            <div class="col-1">
+                <img src="Snapchat-1681801675.jpg" alt="">
+            </div>
+            <div class="col-2">
+                <h1 class="Subtitle">About-me</h1>
+                <p>Hello! I'm Yuvz saini, a passionate Bachelor of Computer Applications
+                    (BCA) student with a keen interest in web
+                    I am currently diving deep into the MERN stack to build modern
+                    and dynamic web applications.
+                </p>
+                <div class="tab-titles">
+                    <div class="tab-links active-links" onclick="opentab('Skills')">Skills</div>
+                    <div class="tab-links" onclick="opentab('Experience')">Experience</div>
+                    <div class="tab-links" onclick="opentab('Education')">Education</div>
+                </div>
+                <div class="tab-content active-tab" id="Skills">
+                    <ul>
+                        <li><span>UI/UX</span><br>Designing Web /App interface</li>
+                        <li><span>Web devlopment</span><br>Web app Devlopment</li>
+                        <li><span>Android Devlopment</span><br>Android App Devlopment</li>
+                    </ul>
+                </div>
+
+                <div class="tab-content" id="Experience">
+                    <ul>
+                        <li><span>YouTube clone</span><br>Designing youtube clone aap</li>
+                        <li><span>Questio</span><br>Online Learning platform</li>
+                        <li><span>Fiesta</span><br>Recipe website</li>
+                    </ul>
+                </div>
+
+                <div class="tab-content" id="Education">
+                    <ul>
+                        <li><span>2020</span><br>10th from Noble Kingdom</li>
+                        <li><span>2022</span><br>12th from G.R Global Academy</li>
+                        <li><span>2023*</span><br>B.C.A from Manipal University</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+ <!-- Services  -->
+  <div id="services">
+    <div class="container">
+        <h1 class="Subtitle">My Services</h1>
+        <div class="Services-list">        
+            <div>
+                <i class="fa-solid fa-code"></i>
+            <h2>Web design</h2>
+            <p>Designing web pages and websites</p>
+            <a href="#">learn more</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-crop"></i>
+                                <h2>UI/UX</h2>
+                <p>Designing web/app interface</p>
+                <a href="#">learn more</a>
+            </div>
+            <div>
+                <i class="fa-brands fa-app-store-ios"></i>
+                    <h2>App design</h2>
+                    <p>Designing web/app interface</p>
+                    <a href="#">learn more</a>
+            </div>
+        </div>
+    </div>
+  </div>
+  <!-- Portfolio  -->
+   <div id="portfolio">
+    <div class="container">
+        <h1 class="Subtitle">My Work</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="work-2.png" alt="">
+                    <div class="layer">
+                    <h2>Social Media</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique id possimus aut architecto cumque? Animi sit placeat illo repellat fugiat!</p>
+                    <a href="#"><i class="fa-solid fa-link"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="work-1.png" alt="">                <div class="layer">
+                    <h2>Coding and Chill</h2>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, exercitationem! Deserunt temporibus blanditiis, eaque ipsa quam qui molestias quo! </p>
+                    <a href="#"><i class="fa-solid fa-link"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="work-3.png" alt="">
+                <div class="layer">
+                    <h2>Online learning </h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta vitae et minima nemo eius incidunt temporibus ipsa sapiente excepturi nostrum vel?</p>   
+                  <a href="#"><i class="fa-solid fa-link"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="btn"><a href="">See More</a></div>
+    </div>
+   </div>
+   <!-- Contact us -->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="Subtitle">Contact me</h1>
+                    <p><i class="fa-regular fa-envelope"></i>sainiyuvz67@gmail.com</p>
+                    <p><i class="fa-regular fa-address-book"></i>8890993287</p>
+                    <div class="social-icon">
+                        <a href="https://www.instagram.com/illyuv_z?igsh=MWdoN205enJrdG93aA==" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                        <a href=" https://www.snapchat.com/add/illyuv_z?share_id=ovqCD4ncFZQ&locale=en-GB" target="_blank"><i class="fa-brands fa-snapchat"></i></a>
+                        <a href="www.linkedin.com/in/yuvraj-saini-2091872a8" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                    <a href="CORE_CV_template_1.doc" id="btn-2" class="btn btn-1">Download CV</a>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your name" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
+                        <input type="message" name="Message" rows="6" placeholder="Your message" required>
+                        <button type="submit" id="btn-2" class="btn btn-1 btn2">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Yuvraj Saini. All rights reserved. made by all love <i class="fa-solid fa-heart"></i>..</p>
+        </div>
+    </div>
+  <!-- Script -->
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+   var tabcontent = document.getElementsByClassName("tab-content");
+   
+   function opentab(tabname) {
+       // Remove 'active-links' class from all tab links
+       for (let tablink of tablinks) {
+           tablink.classList.remove("active-links");
+       }
+   
+       // Remove 'active-tab' class from all tab content
+       for (let tab of tabcontent) {
+           tab.classList.remove("active-tab");
+       }
+   
+       // Add 'active-links' class to the clicked tab link
+       event.currentTarget.classList.add("active-links");
+   
+       // Add 'active-tab' class to the relevant tab content
+       document.getElementById(tabname).classList.add("active-tab");
+   }
+</script>
+<!-- script menu and close button -->
+ <script>
+    var sidemenu = document.getElementById("sidemenu");
+
+    function openmenu() {
+        sidemenu.style.right ="0";
+    }
+    function closemenu() {
+        sidemenu.style.right = "-300px";
+    }
+
+</script>
+<!-- script contact form -->
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyYL9qHdVX31yyprDFPjeZNMoedJZ02QWM7YNn0OiVOyVf2_hf1pRkeIzoiQROUP-vLTA/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById('msg')
+
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML= "Message sent sucessfully"
+            setTimeout(function(){
+                msg.innerHTML = "";
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+</body>
+</html>
