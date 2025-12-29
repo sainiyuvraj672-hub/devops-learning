@@ -1,0 +1,11 @@
+---
+- name: add the the user tiluu on db
+  hosts: db
+  become: true
+
+  tasks:
+    - name: add user tiluu on db
+      user:
+        name: tiluu
+        uid: 1055
+        state: present

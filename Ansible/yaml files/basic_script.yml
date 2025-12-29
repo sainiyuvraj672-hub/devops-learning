@@ -1,0 +1,20 @@
+---
+- name: making dir on all the servers
+  hosts: all
+  become: true
+
+  tasks:
+    - name: create a dir
+      file:
+        path: /opt/ansible-demo
+        state: directory
+        mode: '0755'
+
+
+    - name: craete a file with content
+      copy:
+        dest: /opt/ansible-demo/hello.txt
+        content:
+         hello this file is made by ansible
+         calm script. clean run.
+        mode: '0644'

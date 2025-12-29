@@ -1,0 +1,26 @@
+---
+- name: variable basic demo
+  hosts: all_servers
+  become: true
+
+  vars:
+    my_dir: /root/new-var-demo
+    my_file: hello.txt
+    my_line: "hello from variable!!"
+
+  tasks:
+    - name: create directory using variable
+      file:
+        path: "{{ my_dir }}"
+        state: directory
+        mode: '0755'
+
+    - name: create the file
+      file:
+        path: "{{ my_dir }}/{{ my_file }}"
+        state: touch
+
+    - name: write the line in the conntent
+      lineinfile:
+        path: "{{ my_dir }}/{{ my_file }}"
+        line: "{{my_line}}"

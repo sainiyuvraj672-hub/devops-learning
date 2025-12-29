@@ -1,0 +1,11 @@
+---
+- name: clone minor_project
+  hosts: non_root
+  become: false
+
+  tasks:
+    - name: clone the git repository
+      git:
+        repo: https://github.com/Yuviiii67/minor-project-yuvraj-aditya.git
+        dest: /home/prac_devop/minor-project-git
+        version: main

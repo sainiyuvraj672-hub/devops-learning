@@ -1,0 +1,33 @@
+---
+- name: variable demo to add the user and groups
+  hosts: all_servers
+  become: true
+
+  vars:
+    my_ext_user: yuvija
+    my_group: relation
+    my_dir: /root/og_der
+    file_name: notes.txt
+
+
+  tasks:
+      - name: create a directory
+        file:
+          path: "{{ my_dir }}"
+          state: directory
+          owner: "{{ my_ext_user }}"
+          group: "{{ my_group }}"
+          mode: '0755'
+
+      - name: create a file
+        file:
+          path: "{{ my_dir }}/{{ file_name }}"
+          state: touch
+          owner: "{{ my_ext_user }}"
+          group: "{{ my_group }}"
+
+      - name: add the content
+        lineinfile:
+          path: "{{ my_dir }}/{{ file_name }}"
+          line: "this file is managed by variable"
+

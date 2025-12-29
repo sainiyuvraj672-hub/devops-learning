@@ -1,0 +1,15 @@
+---
+- name: cron set
+  hosts: web
+  become: true
+
+  tasks:
+    - name: add croj job
+      cron:
+        name: check
+        minute: 36
+        hour: 12
+        day: "*"
+        weekday: "*"
+        user: root
+        job: /root/cronie/hello.sh

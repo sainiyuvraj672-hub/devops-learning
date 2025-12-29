@@ -1,0 +1,44 @@
+---
+- name: deploy website using template
+  hosts: all_servers
+  become: true
+
+  vars:
+    env: production
+
+  tasks:
+    - name: ensure httpd installed
+      yum:
+        name: httpd
+        state: present
+
+    - name: ensure httpd running
+      service:
+        name: httpd
+        state: started
+        enabled: true
+
+    - name: deploy index.html using template
+      template:
+        src: templates/index.html.j2
+        dest: /var/www/html/index.html
+      notify: restart apache
+
+    - name: ensure firewalld stopped
+      service:
+        name: firewalld
+        state: stopped
+
+    - name: set selinux to permissive
+      ansible.posix.selinux:
+        policy: targeted
+        state: permissive
+
+  handlers:
+    - name: restart apache
+      service:
+        name: httpd
+        state: restarted
+
+
+

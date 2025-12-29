@@ -1,0 +1,21 @@
+---
+- name: cron set
+  hosts: non_root
+  become: true
+
+  tasks:
+    - name: Ensure target directory exists and is writable
+      file:
+        path: /tmp/script
+        state: directory
+        owner: prac_devop
+        mode: '0755'
+
+    - name: add cron job
+      cron:
+        name: "Run Test Script"
+        minute: "25"
+        hour: "13"
+        user: prac_devop
+        # Best practice: use /bin/bash to execute the script
+        job: "/bin/bash /home/prac_devop/cronie/new.sh"

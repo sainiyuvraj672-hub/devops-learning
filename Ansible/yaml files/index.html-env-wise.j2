@@ -1,0 +1,21 @@
+html>
+  <head>
+    <title>Ansible Template Demo</title>
+  </head>
+  <body>
+    <h1>Deployed by the Ansible 😤🔥</h1>
+
+    <p><b>Hostname:</b> {{ ansible_hostname }}</p>
+    <p><b>IP Address:</b> {{ ansible_default_ipv4.address }}</p>
+    <p><b>Environment:</b> {{ env }}</p>
+
+    {% if env == "production" %}
+      <p style="color:red;"><b>⚠️ PRODUCTION SERVER ⚠️</b></p>
+    {% elif env == "staging" %}
+      <p style="color:orange;"><b>🧪 STAGING SERVER</b></p>
+    {% else %}
+      <p style="color:green;"><b>🚧 DEVELOPMENT SERVER</b></p>
+    {% endif %}
+
+  </body>
+</html>

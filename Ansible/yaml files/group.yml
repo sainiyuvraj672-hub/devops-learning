@@ -1,0 +1,24 @@
+---
+- name: create the group playbook
+  hosts: all_servers
+  become: true
+
+  tasks:
+    - name: create group linux_family
+      group:
+        name: linux_family
+        gid: 1012
+        state: present
+
+    - name: create new user yuvv add to the linux_family
+      user:
+        name: yuvv
+        uid: 1012
+        group: linux_family
+        state: present
+
+    - name: add existing user prom to linux_family
+      user:
+        name: prom
+        groups: linux_family
+        append: yes

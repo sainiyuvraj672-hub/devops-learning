@@ -1,0 +1,23 @@
+---
+- name: Remove old cron jobs
+  hosts: non_root
+  become: true
+
+  tasks:
+    - name: Remove Run Test Script job
+      cron:
+        name: "Run Test Script"
+        state: absent
+        user: prac_devop
+
+    - name: Remove check job
+      cron:
+        name: "check"
+        state: absent
+        user: prac_devop
+
+    - name: Remove hello cron test job
+      cron:
+        name: "hello cron test"
+        state: absent
+        user: prac_devop
